@@ -1,0 +1,70 @@
+# SENSITIVE FILE, use '#'s to comment out lines
+#
+# Player List (separate by '/'s)
+Keoki/Linden/Ben/Aiden/Nick/Kodiak/Alvaro/Josh/Spencer/Aiki/Merrick/Miles/Michael/Bradley/Ian/Cooper/Tom/Luka/Tomas
+#
+# Matches Below (m/d/yyyy/player1/player2/winner/player1score/player2score)
+# you don't need to put matches in order but try to keep them organized for human viewing
+#
+# 2024 New Year's Tournament
+#
+1/8/2024/Josh/Spencer/Spencer/1/14
+1/8/2024/Aiden/Michael/Aiden/14/7
+1/8/2024/Nick/Miles/Nick/14/3
+1/8/2024/Linden/Ian/Linden/15/7
+1/8/2024/Kodiak/Merrick/Kodiak/14/4
+1/10/2024/Alvaro/Aiki/Aiki/8/14
+1/10/2024/Ben/Bradley/Ben/14/7
+1/10/2024/Ian/Alvaro/Alvaro/4/14
+1/17/2024/Keoki/Cooper/Keoki/19/18
+1/17/2024/Michael/Miles/Miles/9/14
+1/17/2024/Keoki/Spencer/Spencer/0/14
+1/17/2024/Aiden/Nick/Nick/0/14
+1/22/2024/Cooper/Josh/Cooper/20/17
+1/22/2024/Ben/Kodiak/Ben/15/11
+1/22/2024/Keoki/Merrick/Keoki/17/14
+1/24/2024/Linden/Aiki/Linden/15/10
+1/24/2024/Linden/Ben/Ben/23/30
+1/29/2024/Kodiak/Cooper/Kodiak/18/14
+1/29/2024/Aiki/Miles/Aiki/14/7
+1/29/2024/Aiden/Alvaro/Alvaro/4/14
+1/29/2024/Spencer/Nick/Nick/11/22
+1/31/2024/Alvaro/Keoki/Alvaro/32/19
+1/31/2024/Nick/Ben/Nick/22/12
+2/2/2024/Linden/Alvaro/Alvaro/26/30
+2/5/2024/Kodiak/Aiki/Kodiak/28/26
+2/5/2024/Spencer/Kodiak/Spencer/22/9
+2/7/2024/Spencer/Alvaro/Spencer/22/14
+2/7/2024/Spencer/Ben/Ben/14/22
+2/12/2024/Nick/Ben//32/21
+#
+# League Matches
+# Cycle 1
+3/11/2024/Spencer/Linden//11/8
+3/11/2024/Nick/Kodiak//11/3
+3/11/2024/Linden/Kodiak//11/7
+3/11/2024/Aiden/Ian//11/6
+3/11/2024/Merrick/Aiden//15/13
+3/13/2024/Tom/Luka//11/7
+3/13/2024/Tomas/Ben//11/4
+3/13/2024/Tom/Bradley//11/9
+3/13/2024/Tomas/Spencer//11/7
+3/18/2024/Aiki/Kodiak//13/11
+3/18/2024/Linden/Tomas//5/11
+3/18/2024/Merrick/Ian//11/6
+3/18/2024/Spencer/Aiki//11/7
+3/19/2024/Tom/Merrick//11/4
+3/20/2024/Luka/Aiden//11/7
+3/20/2024/Luka/Bradley//13/15
+3/20/2024/Ian/Bradley//7/11
+#
+# Cycle 2
+3/25/2024/Linden/Merrick//11/9
+3/25/2024/Linden/Spencer//11/7
+#
+# Miscelaneous Matches
+2/22/2024/Linden/Ian/Linden/23/18
+3/1/2024/Linden/Tom/Tom/14/22
+3/15/2024/Tom/Spencer//11/6
+#
+end
