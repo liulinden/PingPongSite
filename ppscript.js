@@ -50,12 +50,55 @@ function drawAllConnections(){
     }
 }
 
+function numPointsPlayed(p1,p2){
+    let num=0
+    for (let i=0;i<matches.length;i++){
+        if ((matches[i][4]==p1 && matches[i][5]==p2) || (matches[i][4]==p2 && matches[i][5]==p1)){
+            num+=matches[i][7]+matches[i][8]
+        }
+    }
+    return num
+}
+
+function applyForces(){
+    for (let i=0;i<playerNodes.length;i++){
+        let p1=playerNodes[i]
+        for (let j=i+1;j<playerNodes.length;j++){
+            let p2=playerNodes[j]
+            let desiredDistance = 500 + 500/Math.max(1,numPointsPlayed(p1.name,p2.name))
+            let currentDistance = Math.sqrt(Math.pow(p1.x-p2.x,2)+Math.pow(p1.y-p2.y,2))
+            if (currentDistance==0){
+                angle=Math.random()*2*Math.PI
+                p1.x+=Math.sin(angle)
+                p1.y+=Math.cos(angle)
+                p2.x-=Math.sin(angle)
+                p2.y-=Math.cos(angle)
+                currentDistance = Math.sqrt(Math.pow(p1.x-p2.x,2)+Math.pow(p1.y-p2.y,2))
+            }
+            p1.xSpeed+=(desiredDistance/currentDistance-1)*(p1.x-p2.x)/200
+            p1.ySpeed+=(desiredDistance/currentDistance-1)*(p1.y-p2.y)/200
+            p2.xSpeed+=(desiredDistance/currentDistance-1)*(p2.x-p1.x)/200
+            p2.ySpeed+=(desiredDistance/currentDistance-1)*(p2.y-p1.y)/200
+            //console.log(desiredDistance)
+        }
+    }
+}
+
 class PlayerNode{
     constructor(name){
         this.name=name
-        this.x=2500*Math.random()-1250
-        this.y=1000*Math.random()-500
+        this.x=0
+        this.y=0
         this.size=100
+        this.xSpeed=0
+        this.ySpeed=0
+    }
+
+    update(){
+        this.x+=this.xSpeed
+        this.y+=this.ySpeed
+        this.xSpeed*=0.7
+        this.ySpeed*=0.7
     }
 
     draw(){
@@ -81,11 +124,13 @@ function drawFrame(){
     canvas.height=canvas.clientHeight*dpr;
     drawAllConnections()
     for (let i=0;i<playerNodes.length;i++){
+        playerNodes[i].update()
         playerNodes[i].draw()
     }
 }
 
 function gameLoop(){
+    applyForces()
     drawFrame()
     requestAnimationFrame(gameLoop)
 }
