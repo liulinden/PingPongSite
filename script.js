@@ -13,9 +13,10 @@ ctx.imageSmoothingEnabled = false;
 
 document.addEventListener("mousemove", updateMouse)
 document.addEventListener("mousedown", mouseDown)
+document.addEventListener("mouseup", mouseUp)
 
 //paste from converter output
-const data = [['Keoki', 'Linden', 'Ben', 'Aiden', 'Nick', 'Kodiak', 'Alvaro', 'Josh', 'Spencer', 'Aiki', 'Merrick', 'Miles', 'Michael', 'Bradley', 'Ian', 'Cooper', 'Tom', 'Luka', 'Tomas'], [[2024, 1, 8, 372, 'Josh', 'Spencer', 'Spencer', 1, 14], [2024, 1, 8, 372, 'Aiden', 'Michael', 'Aiden', 14, 7], [2024, 1, 8, 372, 'Nick', 'Miles', 'Nick', 14, 3], [2024, 1, 8, 372, 'Linden', 'Ian', 'Linden', 15, 7], [2024, 1, 8, 372, 'Kodiak', 'Merrick', 'Kodiak', 14, 4], [2024, 1, 10, 374, 'Alvaro', 'Aiki', 'Aiki', 8, 14], [2024, 1, 10, 374, 'Ben', 'Bradley', 'Ben', 14, 7], [2024, 1, 10, 374, 'Ian', 'Alvaro', 'Alvaro', 4, 14], [2024, 1, 17, 381, 'Keoki', 'Cooper', 'Keoki', 19, 18], [2024, 1, 17, 381, 'Michael', 'Miles', 'Miles', 9, 14], [2024, 1, 17, 381, 'Keoki', 'Spencer', 'Spencer', 0, 14], [2024, 1, 17, 381, 'Aiden', 'Nick', 'Nick', 0, 14], [2024, 1, 22, 386, 'Cooper', 'Josh', 'Cooper', 20, 17], [2024, 1, 22, 386, 'Ben', 'Kodiak', 'Ben', 15, 11], [2024, 1, 22, 386, 'Keoki', 'Merrick', 'Keoki', 17, 14], [2024, 1, 24, 388, 'Linden', 'Aiki', 'Linden', 15, 10], [2024, 1, 24, 388, 'Linden', 'Ben', 'Ben', 23, 30], [2024, 1, 29, 393, 'Kodiak', 'Cooper', 'Kodiak', 18, 14], [2024, 1, 29, 393, 'Aiki', 'Miles', 'Aiki', 14, 7], [2024, 1, 29, 393, 'Aiden', 'Alvaro', 'Alvaro', 4, 14], [2024, 1, 29, 393, 'Spencer', 'Nick', 'Nick', 11, 22], [2024, 1, 31, 395, 'Alvaro', 'Keoki', 'Alvaro', 32, 19], [2024, 1, 31, 395, 'Nick', 'Ben', 'Nick', 22, 12], [2024, 2, 2, 397, 'Linden', 'Alvaro', 'Alvaro', 26, 30], [2024, 2, 5, 400, 'Kodiak', 'Aiki', 'Kodiak', 28, 26], [2024, 2, 5, 400, 'Spencer', 'Kodiak', 'Spencer', 22, 9], [2024, 2, 7, 402, 'Spencer', 'Alvaro', 'Spencer', 22, 14], [2024, 2, 7, 402, 'Spencer', 'Ben', 'Ben', 14, 22], [2024, 2, 12, 407, 'Nick', 'Ben', 'Nick', 32, 21], [2024, 3, 11, 435, 'Spencer', 'Linden', 'Spencer', 11, 8], [2024, 3, 11, 435, 'Nick', 'Kodiak', 'Nick', 11, 3], [2024, 3, 11, 435, 'Linden', 'Kodiak', 'Linden', 11, 7], [2024, 3, 11, 435, 'Aiden', 'Ian', 'Aiden', 11, 6], [2024, 3, 11, 435, 'Merrick', 'Aiden', 'Merrick', 15, 13], [2024, 3, 13, 437, 'Tom', 'Luka', 'Tom', 11, 7], [2024, 3, 13, 437, 'Tomas', 'Ben', 'Tomas', 11, 4], [2024, 3, 13, 437, 'Tom', 'Bradley', 'Tom', 11, 9], [2024, 3, 13, 437, 'Tomas', 'Spencer', 'Tomas', 11, 7], [2024, 3, 18, 442, 'Aiki', 'Kodiak', 'Aiki', 13, 11], [2024, 3, 18, 442, 'Linden', 'Tomas', 'Tomas', 5, 11], [2024, 3, 18, 442, 'Merrick', 'Ian', 'Merrick', 11, 6], [2024, 3, 18, 442, 'Spencer', 'Aiki', 'Spencer', 11, 7], [2024, 3, 19, 443, 'Tom', 'Merrick', 'Tom', 11, 4], [2024, 3, 20, 444, 'Luka', 'Aiden', 'Luka', 11, 7], [2024, 3, 20, 444, 'Luka', 'Bradley', 'Bradley', 13, 15], [2024, 3, 20, 444, 'Ian', 'Bradley', 'Bradley', 7, 11], [2024, 3, 25, 449, 'Linden', 'Merrick', 'Linden', 11, 9], [2024, 3, 25, 449, 'Linden', 'Spencer', 'Linden', 11, 7], [2024, 2, 22, 417, 'Linden', 'Ian', 'Linden', 23, 18], [2024, 3, 1, 425, 'Linden', 'Tom', 'Tom', 14, 22], [2024, 3, 15, 439, 'Tom', 'Spencer', 'Tom', 11, 6]]]
+const data = [['Keoki', 'Linden', 'Ben', 'Aiden', 'Nick', 'Kodiak', 'Alvaro', 'Josh', 'Spencer', 'Aiki', 'Merrick', 'Miles', 'Michael', 'Bradley', 'Ian', 'Cooper', 'Tom', 'Luka', 'Tomas'], [[2024, 1, 8, 372, 'Josh', 'Spencer', 'Spencer', 1, 14], [2024, 1, 8, 372, 'Aiden', 'Michael', 'Aiden', 14, 7], [2024, 1, 8, 372, 'Nick', 'Miles', 'Nick', 14, 3], [2024, 1, 8, 372, 'Linden', 'Ian', 'Linden', 15, 7], [2024, 1, 8, 372, 'Kodiak', 'Merrick', 'Kodiak', 14, 4], [2024, 1, 10, 374, 'Alvaro', 'Aiki', 'Aiki', 8, 14], [2024, 1, 10, 374, 'Ben', 'Bradley', 'Ben', 14, 7], [2024, 1, 10, 374, 'Ian', 'Alvaro', 'Alvaro', 4, 14], [2024, 1, 17, 381, 'Keoki', 'Cooper', 'Keoki', 19, 18], [2024, 1, 17, 381, 'Michael', 'Miles', 'Miles', 9, 14], [2024, 1, 17, 381, 'Keoki', 'Spencer', 'Spencer', 0, 14], [2024, 1, 17, 381, 'Aiden', 'Nick', 'Nick', 0, 14], [2024, 1, 22, 386, 'Cooper', 'Josh', 'Cooper', 20, 17], [2024, 1, 22, 386, 'Ben', 'Kodiak', 'Ben', 15, 11], [2024, 1, 22, 386, 'Keoki', 'Merrick', 'Keoki', 17, 14], [2024, 1, 24, 388, 'Linden', 'Aiki', 'Linden', 15, 10], [2024, 1, 24, 388, 'Linden', 'Ben', 'Ben', 23, 30], [2024, 1, 29, 393, 'Kodiak', 'Cooper', 'Kodiak', 18, 14], [2024, 1, 29, 393, 'Aiki', 'Miles', 'Aiki', 14, 7], [2024, 1, 29, 393, 'Aiden', 'Alvaro', 'Alvaro', 4, 14], [2024, 1, 29, 393, 'Spencer', 'Nick', 'Nick', 11, 22], [2024, 1, 31, 395, 'Alvaro', 'Keoki', 'Alvaro', 32, 19], [2024, 1, 31, 395, 'Nick', 'Ben', 'Nick', 22, 12], [2024, 2, 2, 397, 'Linden', 'Alvaro', 'Alvaro', 26, 30], [2024, 2, 5, 400, 'Kodiak', 'Aiki', 'Kodiak', 28, 26], [2024, 2, 5, 400, 'Spencer', 'Kodiak', 'Spencer', 22, 9], [2024, 2, 7, 402, 'Spencer', 'Alvaro', 'Spencer', 22, 14], [2024, 2, 7, 402, 'Spencer', 'Ben', 'Ben', 14, 22], [2024, 2, 12, 407, 'Nick', 'Ben', 'Nick', 32, 21], [2024, 3, 11, 435, 'Spencer', 'Linden', 'Spencer', 11, 8], [2024, 3, 11, 435, 'Nick', 'Kodiak', 'Nick', 11, 3], [2024, 3, 11, 435, 'Linden', 'Kodiak', 'Linden', 11, 7], [2024, 3, 11, 435, 'Aiden', 'Ian', 'Aiden', 11, 6], [2024, 3, 11, 435, 'Merrick', 'Aiden', 'Merrick', 15, 13], [2024, 3, 13, 437, 'Tom', 'Luka', 'Tom', 11, 7], [2024, 3, 13, 437, 'Tomas', 'Ben', 'Tomas', 11, 4], [2024, 3, 13, 437, 'Tom', 'Bradley', 'Tom', 11, 9], [2024, 3, 13, 437, 'Tomas', 'Spencer', 'Tomas', 11, 7], [2024, 3, 18, 442, 'Aiki', 'Kodiak', 'Aiki', 13, 11], [2024, 3, 18, 442, 'Linden', 'Tomas', 'Tomas', 5, 11], [2024, 3, 18, 442, 'Merrick', 'Ian', 'Merrick', 11, 6], [2024, 3, 18, 442, 'Spencer', 'Aiki', 'Spencer', 11, 7], [2024, 3, 19, 443, 'Tom', 'Merrick', 'Tom', 11, 4], [2024, 3, 20, 444, 'Luka', 'Aiden', 'Luka', 11, 7], [2024, 3, 20, 444, 'Luka', 'Bradley', 'Bradley', 13, 15], [2024, 3, 20, 444, 'Ian', 'Bradley', 'Bradley', 7, 11], [2024, 3, 25, 449, 'Linden', 'Merrick', 'Linden', 11, 9], [2024, 3, 25, 449, 'Linden', 'Spencer', 'Linden', 11, 7], [2024, 3, 27, 451, 'Aiki', 'Ben', 'Aiki', 14, 12], [2024, 3, 27, 451, 'Aiki', 'Tom', 'Aiki', 11, 9], [2024, 3, 27, 451, 'Spencer', 'Merrick', 'Spencer', 11, 1], [2024, 3, 27, 451, 'Luka', 'Ian', 'Luka', 11, 4], [2024, 3, 27, 451, 'Aiden', 'Bradley', 'Aiden', 11, 8], [2024, 3, 27, 451, 'Nick', 'Linden', 'Nick', 11, 6], [2024, 2, 22, 417, 'Linden', 'Ian', 'Linden', 23, 18], [2024, 3, 1, 425, 'Linden', 'Tom', 'Tom', 14, 22], [2024, 3, 15, 439, 'Tom', 'Spencer', 'Tom', 11, 6]]]
 //year/month/day/dayssince2022/p1/p2/winner/score1/score2
 
 const players = data[0]
@@ -27,10 +28,13 @@ function updateMouse(event){
 }
 
 function mouseDown(){
+    initMouseX=mouseX
+    initMouseY=mouseY
     displayedConnection=[]
     for (let i=0;i<playerNodes.length;i++){
         node=playerNodes[i]
         if (Math.sqrt(Math.pow(xcon(node.x)-mouseX,2)+Math.pow(ycon(node.y)-mouseY,2))<nodeSize*zoom){
+            draggedNode=[node]
             let ind=selectedNodes.indexOf(node)
             if (ind!=-1){
                 if (ind==1){
@@ -54,6 +58,19 @@ function mouseDown(){
     if (selectedConnection.length==2){
         displayedConnection=[selectedConnection[0],selectedConnection[1]]
         selectedNodes=[selectedConnection[0],selectedConnection[1]]
+    }
+}
+
+function mouseUp(){
+    draggedNode=[]
+    if (mouseX==initMouseX && mouseY==initMouseY){
+        let ind=selectedNodes.indexOf(node)
+        if (ind!=-1){
+            if (ind==1){
+                selectedNodes=[selectedNodes[0]]
+            } else if (selectedNodes.length==1) selectedNodes=[]
+            else selectedNodes=[selectedNodes[1]]
+        }
     }
 }
 
@@ -111,16 +128,30 @@ function drawAllConnections(){
             let p2=playerNodes[j]
             let played=numPointsPlayed(p1.name,p2.name)
             if (played>0){
-                let color = 'rgba(190, 160, 120,'+String(played/50)+''
-                if (selectedConnection.length==2 && (p1==selectedConnection[0] || p1==selectedConnection[1]) && (p2==selectedConnection[0] || p2==selectedConnection[1])) {
-                    color = 'rgba(255,60,60,'+String(played/50)+''
+                if (!(selectedConnection.length==2 && (p1==selectedConnection[0] || p1==selectedConnection[1]) && (p2==selectedConnection[0] || p2==selectedConnection[1]))) {
+                    if (!(displayedConnection.length==2 && (p1==displayedConnection[0] || p1==displayedConnection[1]) && (p2==displayedConnection[0] || p2==displayedConnection[1]))) {
+                        let color = 'rgba(190, 160, 120,'+String(played/50)+''
+                        drawLine(color,10,xcon(p1.x),ycon(p1.y),xcon(p2.x),ycon(p2.y))
+                    }
                 }
-                if (displayedConnection.length==2 && (p1==displayedConnection[0] || p1==displayedConnection[1]) && (p2==displayedConnection[0] || p2==displayedConnection[1])) {
-                    color = 'rgba(255,60,60,'+String(played/50)+''
-                }
-                drawLine(color,10,xcon(p1.x),ycon(p1.y),xcon(p2.x),ycon(p2.y))
             }
         }
+    }
+    for (let i=0;i<selectedConnection.length;i++){
+        if (!(displayedConnection.length==2 && (p1==displayedConnection[0] || p1==displayedConnection[1]) && (p2==displayedConnection[0] || p2==displayedConnection[1]))) {
+            p1=selectedConnection[0]
+            p2=selectedConnection[1]
+            let played=numPointsPlayed(p1.name,p2.name)
+            color = 'rgba(60, 100, 180,'+String(played/50)+''
+            drawLine(color,10,xcon(p1.x),ycon(p1.y),xcon(p2.x),ycon(p2.y))
+        }
+    }
+    for (let i=0;i<displayedConnection.length;i++){
+        p1=displayedConnection[0]
+        p2=displayedConnection[1]
+        let played=numPointsPlayed(p1.name,p2.name)
+        color = 'rgba(255,60,60,'+String(played/50)+''
+        drawLine(color,10,xcon(p1.x),ycon(p1.y),xcon(p2.x),ycon(p2.y))
     }
 }
 
@@ -173,19 +204,23 @@ function applyForces(){
             let currentDistance = Math.sqrt(Math.pow(p1.x-p2.x,2)+Math.pow(p1.y-p2.y,2))
             if (currentDistance==0){
                 angle=Math.random()*2*Math.PI
-                p1.x+=Math.sin(angle)
-                p1.y+=Math.cos(angle)
-                p2.x-=Math.sin(angle)
-                p2.y-=Math.cos(angle)
+                p1.x+=10*Math.sin(angle)
+                p1.y+=10*Math.cos(angle)
+                p2.x-=10*Math.sin(angle)
+                p2.y-=10*Math.cos(angle)
                 currentDistance = Math.sqrt(Math.pow(p1.x-p2.x,2)+Math.pow(p1.y-p2.y,2))
             }
-            p1.xSpeed+=(desiredDistance-currentDistance)*(p1.x-p2.x)/10/Math.pow(currentDistance,1.5)
-            p1.ySpeed+=(desiredDistance-currentDistance)*(p1.y-p2.y)/10/Math.pow(currentDistance,1.5)
-            p2.xSpeed+=(desiredDistance-currentDistance)*(p2.x-p1.x)/10/Math.pow(currentDistance,1.5)
-            p2.ySpeed+=(desiredDistance-currentDistance)*(p2.y-p1.y)/10/Math.pow(currentDistance,1.5)
-            //console.log(desiredDistance)
+            p1.xSpeed+=limitToAbs((desiredDistance-currentDistance)*(p1.x-p2.x)/30/Math.pow(currentDistance,1.5),3)
+            p1.ySpeed+=limitToAbs((desiredDistance-currentDistance)*(p1.y-p2.y)/30/Math.pow(currentDistance,1.5),3)
+            p2.xSpeed+=limitToAbs((desiredDistance-currentDistance)*(p2.x-p1.x)/30/Math.pow(currentDistance,1.5),3)
+            p2.ySpeed+=limitToAbs((desiredDistance-currentDistance)*(p2.y-p1.y)/30/Math.pow(currentDistance,1.5),3)
         }
     }
+}
+
+function limitToAbs(n,lim){
+    if (n>0) return Math.min(lim,n)
+    else return Math.max(-lim,n)
 }
 
 class PlayerNode{
@@ -252,7 +287,7 @@ function drawFrame(){
     canvas.width=canvas.clientWidth*dpr;
     canvas.height=canvas.clientHeight*dpr;
     drawAllConnections()
-    for (let i=0;i<playerNodes.length;i++){
+    for (let i=playerNodes.length-1;i>=0;i--){
         playerNodes[i].draw()
     }
     if (displayedConnection.length>0) displayScores()
@@ -260,7 +295,17 @@ function drawFrame(){
 
 function updateNodes(){
     for (let i=0;i<playerNodes.length;i++){
-        playerNodes[i].update()
+        if (draggedNode.indexOf(playerNodes[i])==-1) {
+            playerNodes[i].update()
+            if (playerNodes[i].x>maxx) maxx=playerNodes[i].x
+            if (playerNodes[i].x<minx) minx=playerNodes[i].x
+            if (playerNodes[i].y>maxy) maxy=playerNodes[i].y
+            if (playerNodes[i].y<miny) miny=playerNodes[i].y
+        }
+        else {
+            draggedNode[0].x+=(mouseX-prvMouseX)/zoom
+            draggedNode[0].y+=(mouseY-prvMouseY)/zoom
+        }
         if (playerNodes[i].x>maxx) maxx=playerNodes[i].x
         if (playerNodes[i].x<minx) minx=playerNodes[i].x
         if (playerNodes[i].y>maxy) maxy=playerNodes[i].y
@@ -274,6 +319,7 @@ function selectNodes(){
         node=playerNodes[i]
         if (Math.sqrt(Math.pow(xcon(node.x)-mouseX,2)+Math.pow(ycon(node.y)-mouseY,2))<nodeSize*zoom){
             hoveredNodes.push(node)
+            return
         }
     }
 }
@@ -310,10 +356,12 @@ function gameLoop(){
     maxx=playerNodes[0].x
     maxy=playerNodes[0].y
     updateNodes()
-    zoom=Math.min(1,Math.min((canvas.height-4*nodeSize)/(maxx-minx),(canvas.width-4*nodeSize)/(maxy-miny)))
+    zoom=Math.min(0.7,Math.min((canvas.height-4*nodeSize)/(maxx-minx),(canvas.width-4*nodeSize)/(maxy-miny)))
     selectNodes()
     selectConnection()
     drawFrame()
+    prvMouseX=mouseX
+    prvMouseY=mouseY
     requestAnimationFrame(gameLoop)
 }
 
@@ -332,6 +380,11 @@ let selectedNodes = []
 let hoveredNodes=[]
 let selectedConnection = []
 let displayedConnection = []
+let draggedNode = []
+let prvMouseX=0
+let prvMouseY=0
+let initMouseX=0
+let initMouseY=0
 
 for (let i=0;i<players.length;i++){
     playerNodes.push(new PlayerNode(players[i]))
