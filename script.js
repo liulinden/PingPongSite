@@ -63,7 +63,7 @@ function mouseDown(){
 
 function mouseUp(){
     draggedNode=[]
-    if (mouseX==initMouseX && mouseY==initMouseY){
+    if (!(mouseX==initMouseX && mouseY==initMouseY)){
         let ind=selectedNodes.indexOf(node)
         if (ind!=-1){
             if (ind==1){
@@ -210,10 +210,10 @@ function applyForces(){
                 p2.y-=10*Math.cos(angle)
                 currentDistance = Math.sqrt(Math.pow(p1.x-p2.x,2)+Math.pow(p1.y-p2.y,2))
             }
-            p1.xSpeed+=limitToAbs((desiredDistance-currentDistance)*(p1.x-p2.x)/30/Math.pow(currentDistance,1.5),3)
-            p1.ySpeed+=limitToAbs((desiredDistance-currentDistance)*(p1.y-p2.y)/30/Math.pow(currentDistance,1.5),3)
-            p2.xSpeed+=limitToAbs((desiredDistance-currentDistance)*(p2.x-p1.x)/30/Math.pow(currentDistance,1.5),3)
-            p2.ySpeed+=limitToAbs((desiredDistance-currentDistance)*(p2.y-p1.y)/30/Math.pow(currentDistance,1.5),3)
+            p1.xSpeed+=limitToAbs((desiredDistance-currentDistance)*(p1.x-p2.x)/10/Math.pow(currentDistance,1.5),3)
+            p1.ySpeed+=limitToAbs((desiredDistance-currentDistance)*(p1.y-p2.y)/10/Math.pow(currentDistance,1.5),3)
+            p2.xSpeed+=limitToAbs((desiredDistance-currentDistance)*(p2.x-p1.x)/10/Math.pow(currentDistance,1.5),3)
+            p2.ySpeed+=limitToAbs((desiredDistance-currentDistance)*(p2.y-p1.y)/10/Math.pow(currentDistance,1.5),3)
         }
     }
 }
@@ -351,6 +351,10 @@ function selectConnection(){
 
 function gameLoop(){
     applyForces()
+    if (draggedNode.length==1) {
+        draggedNode[0].xSpeed=0
+        draggedNode[0].ySpeed=0
+    }
     minx=playerNodes[0].x
     miny=playerNodes[0].y
     maxx=playerNodes[0].x
