@@ -62,16 +62,38 @@ function mouseDown(){
 }
 
 function mouseUp(){
-    draggedNode=[]
-    if (!(mouseX==initMouseX && mouseY==initMouseY)){
-        let ind=selectedNodes.indexOf(node)
+    if (draggedNode.length==1 && !(mouseX==initMouseX && mouseY==initMouseY)){
+        let ind=selectedNodes.indexOf(draggedNode[0])
         if (ind!=-1){
             if (ind==1){
                 selectedNodes=[selectedNodes[0]]
             } else if (selectedNodes.length==1) selectedNodes=[]
             else selectedNodes=[selectedNodes[1]]
+            displayedConnection=[]
         }
+        else if (selectedNodes.length<2) {
+            selectedNodes.push(draggedNode[0])
+            console.log(selectedNodes)
+            if (selectedNodes.length==2) {
+                if (numPointsPlayed(selectedNodes[0].name,selectedNodes[1].name)>0) displayedConnection=[selectedNodes[0],selectedNodes[1]]
+                else selectedNodes=[]
+            }
+        }
+        else selectedNodes=[draggedNode[0]]
     }
+    draggedNode=[]
+    return
+    if (draggedNode.length==1 && displayedConnection.length==0)
+        if (!(mouseX==initMouseX && mouseY==initMouseY)){
+            let ind=selectedNodes.indexOf(draggedNode[0])
+            if (ind!=-1){
+                if (ind==1){
+                    selectedNodes=[selectedNodes[0]]
+                } else if (selectedNodes.length==1) selectedNodes=[]
+                else selectedNodes=[selectedNodes[1]]
+            }
+        }
+    draggedNode=[]
 }
 
 function nearLine(x,y,x1,y1,x2,y2,r){
