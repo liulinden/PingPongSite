@@ -67,10 +67,21 @@ Keoki/Linden/Ben/Aiden/Nick/Kodiak/Alvaro/Josh/Spencer/Aiki/Merrick/Miles/Michae
 3/27/2024/Luka/Ian/Luka/11/4
 3/27/2024/Aiden/Bradley/Aiden/11/8
 3/27/2024/Nick/Linden/Nick/11/6
+4/1/2024/Kodiak/Keoki/Kodiak/11/9
+4/1/2024/Nick/Tomas/Nick/11/9
+4/1/2024/Kodiak/Bradley/Kodiak/11/4
+4/1/2024/Kodiak/Aiden/Kodiak/12/10
+4/2/2024/Ben/Tom/Ben/11/6
+4/3/2024/Tomas/Tom/Tomas/11/4
+4/3/2024/Keoki/Luka/Luka/9/11
+4/3/2024/Bradley/Luka/Luka/7/11
+4/3/2024/Tomas/Merrick/Tomas/11/4
+4/5/2024/Spencer/Aiki/Aiki/9/11
 #
 # Miscelaneous Matches
 2/22/2024/Linden/Ian/Linden/23/18
 3/1/2024/Linden/Tom/Tom/14/22
 3/15/2024/Tom/Spencer/Tom/11/6
+4/9/2024/Tom/Spencer/Spencer/9/11
 #
 end
